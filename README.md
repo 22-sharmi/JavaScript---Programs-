@@ -1,7 +1,3 @@
-
-### README
-
-```markdown
 # JavaScript Programs
 
 This repository contains a collection of JavaScript programs that demonstrate fundamental concepts, algorithms, and problem-solving techniques. Explore and learn from various coding examples to enhance your JavaScript skills!
@@ -18,10 +14,12 @@ This repository contains a collection of JavaScript programs that demonstrate fu
    ```bash
    git clone https://github.com/22-sharmi/JavaScript---Programs-
    ```
+
 2. Navigate to the directory:
    ```bash
    cd JavaScript---Programs-
    ```
+
 3. Open the `index.html` file in your browser to view the programs.
 
 ## Example Code
@@ -37,6 +35,7 @@ function sumOfDigits(num) {
     }
     return sum;
 }
+
 console.log(sumOfDigits(12345));  // Output: 15
 ```
 
@@ -62,8 +61,3 @@ Feel free to fork the repository and submit pull requests with your improvements
 ## License
 
 This project is licensed under the MIT License.
-```
-
----
-
-You can customize the example code sections with any specific examples you want to highlight! Let me know if you need any further modifications or additional sections!
