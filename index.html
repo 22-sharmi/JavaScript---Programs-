@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive JavaScript Programs Showcase</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #2c3e50;
+      }
+      .category {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 4px;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+      .category-title {
+        cursor: pointer;
+        user-select: none;
+      }
+      .category-title:hover {
+        color: #007bff;
+      }
+      .category-content {
+        display: none;
+        margin-top: 10px;
+      }
+      .program-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .program-list li {
+        margin-bottom: 5px;
+      }
+      .program-list a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      .program-list a:hover {
+        text-decoration: underline;
+      }
+      .program {
+        margin-top: 20px;
+        display: none;
+      }
+      pre[class*="language-"] {
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Interactive JavaScript Programs Showcase</h1>
+
+    <div class="category">
+      <h2 class="category-title" onclick="toggleCategory('array-functions')">
+        Array Functions
+      </h2>
+      <div id="array-functions" class="category-content">
+        <ul class="program-list">
+          <li>
+            <a
+              href="#remove-duplicates"
+              onclick="showProgram('remove-duplicates')"
+              >Remove Duplicates</a
+            >
+          </li>
+          <li>
+            <a href="#find-duplicates" onclick="showProgram('find-duplicates')"
+              >Find Duplicates</a
+            >
+          </li>
+          <li>
+            <a href="#unique-array" onclick="showProgram('unique-array')"
+              >Unique Array</a
+            >
+          </li>
+          <li>
+            <a
+              href="#intersection-arrays"
+              onclick="showProgram('intersection-arrays')"
+              >Intersection of Two Arrays</a
+            >
+          </li>
+          <li>
+            <a href="#sort-by-age" onclick="showProgram('sort-by-age')"
+              >Sorting by Age</a
+            >
+          </li>
+          <li>
+            <a href="#find-longest" onclick="showProgram('find-longest')"
+              >Find Longest Number</a
+            >
+          </li>
+          <li>
+            <a href="#second-largest" onclick="showProgram('second-largest')"
+              >Find Second Largest Number</a
+            >
+          </li>
+          <li>
+            <a href="#find-missing" onclick="showProgram('find-missing')"
+              >Find Missing Number in Array</a
+            >
+          </li>
+          <li>
+            <a href="#merge-arrays" onclick="showProgram('merge-arrays')"
+              >Merge Two Arrays</a
+            >
+          </li>
+        </ul>
+
+        <div id="remove-duplicates" class="program">
+          <h3>Remove Duplicates</h3>
+          <pre><code class="language-javascript">
+const arr1 = [1, 2, 3, 4, 4, 4, 5, 6];
+function removeDuplicate(arr) {
+    return [...new Set(arr)];
+}
+console.log(removeDuplicate(arr1));
+                </code></pre>
+        </div>
+
+        <div id="find-duplicates" class="program">
+          <h3>Find Duplicates</h3>
+          <pre><code class="language-javascript">
+const arr2 = [1, 2, 3, 4, 4, 4, 5, 6];
+function findDuplicate(arr) {
+    const counts = {};
+    const duplicate = [];
+    for (const num of arr) {
+        counts[num] = (counts[num] || 0) + 1;
+    }
+    for (const key in counts) {
+        if (counts[key] > 1) {
+            duplicate.push(Number(key));
+        }
+    }
+    return duplicate;
+}
+console.log(findDuplicate(arr2));
+                </code></pre>
+        </div>
+
+        <div id="unique-array" class="program">
+          <h3>Unique Array</h3>
+          <pre><code class="language-javascript">
+function getUniqueArray(arr) {
+    const unique = [];
+    for (const item of arr) {
+        if (!unique.includes(item)) {
+            unique.push(item);
+        }
+    }
+    return unique;
+}
+console.log(getUniqueArray([1, 2, 1, 2, 3, 4]));
+                </code></pre>
+        </div>
+
+        <div id="intersection-arrays" class="program">
+          <h3>Intersection of Two Arrays</h3>
+          <pre><code class="language-javascript">
+const arr3 = [1, 2, 3];
+const arr4 = [2, 3, 4];
+function findIntersections(arr1, arr2) {
+    const set1 = new Set(arr1);
+    const set2 = new Set(arr2);
+    return [...set1].filter(item => set2.has(item));
+}
+console.log(findIntersections(arr3, arr4));
+                </code></pre>
+        </div>
+
+        <div id="sort-by-age" class="program">
+          <h3>Sorting by Age</h3>
+          <pre><code class="language-javascript">
+const arr5 = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 22 },
+    { name: "Charlie", age: 28 },
+];
+function sortByAge(arr) {
+    return arr.sort((a, b) => a.age - b.age);
+}
+console.log(sortByAge(arr5));
+                </code></pre>
+        </div>
+
+        <div id="find-longest" class="program">
+          <h3>Find Longest Number</h3>
+          <pre><code class="language-javascript">
+const arr6 = [1, 2, 3, 4, 5, 6, 7, 8];
+function findLongest(arr) {
+    return Math.max(...arr);
+}
+console.log(findLongest(arr6));
+                </code></pre>
+        </div>
+
+        <div id="second-largest" class="program">
+          <h3>Find Second Largest Number</h3>
+          <pre><code class="language-javascript">
+const arr7 = [3, 5, 7, 2, 8];
+function secondLargest(arr) {
+    let largest = -Infinity;
+    let secondLargest = -Infinity;
+    for (const num of arr) {
+        if (num > largest) {
+            secondLargest = largest;
+            largest = num;
+        } else if (num > secondLargest && num !== largest) {
+            secondLargest = num;
+        }
+    }
+    return secondLargest;
+}
+console.log(secondLargest(arr7));
+                </code></pre>
+        </div>
+
+        <div id="find-missing" class="program">
+          <h3>Find Missing Number in Array</h3>
+          <pre><code class="language-javascript">
+const arr8 = [1, 2, 4, 5];
+function findMissingNumber(arr) {
+    const n = arr.length + 1;
+    const totalSum = (n * (n + 1)) / 2;
+    const currentSum = arr.reduce((a, b) => a + b, 0);
+    return totalSum - currentSum;
+}
+console.log(findMissingNumber(arr8));
+                </code></pre>
+        </div>
+
+        <div id="merge-arrays" class="program">
+          <h3>Merge Two Arrays</h3>
+          <pre><code class="language-javascript">
+const arr9 = [1, 2, 3, 4];
+const arr10 = [5, 6, 7, 8];
+function mergeArray(arr1, arr2) {
+    const mergeArr = [];
+    let i = 0, j = 0;
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            mergeArr.push(arr1[i]);
+            i++;
+        } else {
+            mergeArr.push(arr2[j]);
+            j++;
+        }
+    }
+    while (i < arr1.length) {
+        mergeArr.push(arr1[i]);
+        i++;
+    }
+    while (j < arr2.length) {
+        mergeArr.push(arr2[j]);
+        j++;
+    }
+    return mergeArr;
+}
+console.log(mergeArray(arr9, arr10));
+                </code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2 class="category-title" onclick="toggleCategory('string-functions')">
+        String Functions
+      </h2>
+      <div id="string-functions" class="category-content">
+        <ul class="program-list">
+          <li>
+            <a href="#reverse-string" onclick="showProgram('reverse-string')"
+              >Reverse a String</a
+            >
+          </li>
+          <li>
+            <a
+              href="#check-palindrome"
+              onclick="showProgram('check-palindrome')"
+              >Check Palindrome</a
+            >
+          </li>
+          <li>
+            <a
+              href="#find-longest-word"
+              onclick="showProgram('find-longest-word')"
+              >Find Longest Word</a
+            >
+          </li>
+          <li>
+            <a href="#check-anagrams" onclick="showProgram('check-anagrams')"
+              >Check Anagrams</a
+            >
+          </li>
+          <li>
+            <a href="#count-character" onclick="showProgram('count-character')"
+              >Count Character in String</a
+            >
+          </li>
+          <li>
+            <a href="#to-title-case" onclick="showProgram('to-title-case')"
+              >Convert to Title Case</a
+            >
+          </li>
+          <li>
+            <a
+              href="#last-word-letter"
+              onclick="showProgram('last-word-letter')"
+              >Last Word and Last Letter</a
+            >
+          </li>
+        </ul>
+
+        <div id="reverse-string" class="program">
+          <h3>Reverse a String</h3>
+          <pre><code class="language-javascript">
+const str1 = "Hello";
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+console.log(reverseString(str1));
+                </code></pre>
+        </div>
+
+        <div id="check-palindrome" class="program">
+          <h3>Check Palindrome</h3>
+          <pre><code class="language-javascript">
+const str2 = "racecar";
+function isPalindrome(str) {
+    return str === str.split('').reverse().join('');
+}
+console.log(isPalindrome(str2));
+                </code></pre>
+        </div>
+
+        <div id="find-longest-word" class="program">
+          <h3>Find Longest Word</h3>
+          <pre><code class="language-javascript">
+const sentence = "The quick brown fox jumped over the lazy dog";
+function findLongestWord(sentence) {
+    const words = sentence.split(' ');
+    return words.reduce((longest, word) => word.length > longest.length ? word : longest, '');
+}
+console.log(findLongestWord(sentence));
+                </code></pre>
+        </div>
+
+        <div id="check-anagrams" class="program">
+          <h3>Check Anagrams</h3>
+          <pre><code class="language-javascript">
+const str3 = "silent";
+const str4 = "listen";
+function areAnagrams(str1, str2) {
+    return str1.split('').sort().join('') === str2.split('').sort().join('');
+}
+console.log(areAnagrams(str3, str4));
+                </code></pre>
+        </div>
+
+        <div id="count-character" class="program">
+          <h3>Count Character in String</h3>
+          <pre><code class="language-javascript">
+const str5 = "Sharmila Sri Kumaravel";
+const char = "a";
+function countChar(str, char) {
+    return str.split('').filter(c => c === char).length;
+}
+console.log(countChar(str5, char));
+                </code></pre>
+        </div>
+
+        <div id="to-title-case" class="program">
+          <h3>Convert to Title Case</h3>
+          <pre><code class="language-javascript">
+const str6 = "sharmila sri";
+function toTitleCase(str) {
+    return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+console.log(toTitleCase(str6));
+                </code></pre>
+        </div>
+
+        <div id="last-word-letter" class="program">
+          <h3>Last Word and Last Letter</h3>
+          <pre><code class="language-javascript">
+const str7 = "  Sharmila Sri ";
+function lastWord(str) {
+    const words = str.trim().split(/\s+/);
+    const lastWord = words[words.length - 1];
+    const lastLetter = lastWord[lastWord.length - 1];
+    return { lastWord, lastLetter };
+}
+console.log(lastWord(str7));
+                </code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2 class="category-title" onclick="toggleCategory('number-functions')">
+        Number Functions
+      </h2>
+      <div id="number-functions" class="category-content">
+        <ul class="program-list">
+          <li>
+            <a href="#check-prime" onclick="showProgram('check-prime')"
+              >Check Prime Number</a
+            >
+          </li>
+          <li>
+            <a
+              href="#calculate-factorial"
+              onclick="showProgram('calculate-factorial')"
+              >Calculate Factorial</a
+            >
+          </li>
+          <li>
+            <a href="#sum-of-digits" onclick="showProgram('sum-of-digits')"
+              >Sum of Digits</a
+            >
+          </li>
+          <li>
+            <a
+              href="#average-of-array"
+              onclick="showProgram('average-of-array')"
+              >Average of Array</a
+            >
+          </li>
+        </ul>
+
+        <div id="check-prime" class="program">
+          <h3>Check Prime Number</h3>
+          <pre><code class="language-javascript">
+function isPrime(num) {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isPrime(29));
+                </code></pre>
+        </div>
+
+        <div id="calculate-factorial" class="program">
+          <h3>Calculate Factorial</h3>
+          <pre><code class="language-javascript">
+function factorial(num) {
+    if (num === 0) return 1;
+    let result = 1;
+    for (let i = 1; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
+console.log(factorial(5));
+                </code></pre>
+        </div>
+
+        <div id="sum-of-digits" class="program">
+          <h3>Sum of Digits</h3>
+          <pre><code class="language-javascript">
+function sumOfDigits(num) {
+    let sum = 0;
+    while (num !== 0) {
+        sum += num % 10;
+        num = Math.floor(num / 10);
+    }
+    return sum;
+}
+console.log(sumOfDigits(12345));
+                </code></pre>
+        </div>
+
+        <div id="average-of-array" class="program">
+          <h3>Average of Array</h3>
+          <pre><code class="language-javascript">
+function averageArray(arr) {
+    return arr.reduce((a, b) => a + b, 0) / arr.length;
+}
+const arr11 = [1, 2, 3, 4, 5];
+console.log(averageArray(arr11));
+                </code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2
+        class="category-title"
+        onclick="toggleCategory('sequences-algorithms')"
+      >
+        Sequences & Algorithms
+      </h2>
+      <div id="sequences-algorithms" class="category-content">
+        <ul class="program-list">
+          <li>
+            <a
+              href="#kadane-algorithm"
+              onclick="showProgram('kadane-algorithm')"
+              >Kadane's Algorithm for Maximum Subarray</a
+            >
+          </li>
+          <li>
+            <a
+              href="#balanced-parentheses"
+              onclick="showProgram('fibonacci-sequence')"
+              >Fibonacci Sequence</a
+            >
+          </li>
+          <li>
+            <a
+              href="#balanced-parentheses"
+              onclick="showProgram('balanced-parentheses')"
+              >Balanced Parentheses Check</a
+            >
+          </li>
+        </ul>
+
+        <div id="kadane-algorithm" class="program">
+          <h3>Kadane's Algorithm for Maximum Subarray</h3>
+          <pre><code class="language-javascript">
+function maxSubArray(arr) {
+    let maxCurrent = arr[0], maxGlobal = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        maxCurrent = Math.max(arr[i], maxCurrent + arr[i]);
+        if (maxCurrent > maxGlobal) maxGlobal = maxCurrent;
+    }
+    return maxGlobal;
+}
+const arr12 = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+console.log(maxSubArray(arr12));
+                </code></pre>
+        </div>
+        <div id="fibonacci-sequence" class="program">
+          <h3>Fibonacci sequence</h3>
+          <pre><code class="language-javascript">
+            function fibonacci (n){
+                if (n<2) return n
+                let a=0,b=1,next;
+                for(let i=2 ; i<=n ; i++){
+                    next=a+b
+                    a=b
+                    b=next
+                }
+                return b
+            }
+            console.log(fibonacci(6))
+                    
+                </code></pre>
+        </div>
+
+        <div id="balanced-parentheses" class="program">
+          <h3>Balanced Parentheses Check</h3>
+          <pre><code class="language-javascript">
+function isBalancedParentheses(str) {
+    const stack = [];
+    for (const char of str) {
+        if (char === '(') stack.push(char);
+        else if (char === ')') {
+            if (stack.length === 0) return false;
+            stack.pop();
+        }
+    }
+    return stack.length === 0;
+}
+console.log(isBalancedParentheses("((()))"));
+console.log(isBalancedParentheses("(()"));
+                </code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2
+        class="category-title"
+        onclick="toggleCategory('call-by-value-reference')"
+      >
+        Call by Value and Call by Reference
+      </h2>
+      <div id="call-by-value-reference" class="category-content">
+        <ul class="program-list">
+          <li>
+            <a href="#call-by-value" onclick="showProgram('call-by-value')"
+              >Call by Value (for primitives)</a
+            >
+          </li>
+          <li>
+            <a
+              href="#call-by-reference"
+              onclick="showProgram('call-by-reference')"
+              >Call by Reference (for objects)</a
+            >
+          </li>
+        </ul>
+
+        <div id="call-by-value" class="program">
+          <h3>Call by Value (for primitives)</h3>
+          <pre><code class="language-javascript">
+let a = 10;
+function modifyValue(val) {
+    val = 20;
+}
+modifyValue(a);
+console.log(a); // Output: 10 (unchanged)
+                </code></pre>
+        </div>
+
+        <div id="call-by-reference" class="program">
+          <h3>Call by Reference (for objects)</h3>
+          <pre><code class="language-javascript">
+let obj = { name: 'Sharmila' };
+function modifyObject(o) {
+    o.name = 'Sri';
+}
+modifyObject(obj);
+console.log(obj.name); // Output: 'Sri' (modified)
+                </code></pre>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleCategory(categoryId) {
+        const content = document.getElementById(categoryId);
+        content.style.display =
+          content.style.display === "none" ? "block" : "none";
+      }
+
+      function showProgram(programId) {
+        const programs = document.getElementsByClassName("program");
+        for (let program of programs) {
+          program.style.display = "none";
+        }
+        document.getElementById(programId).style.display = "block";
+      }
+
+      // Manually initialize Prism for code highlighting
+      Prism.highlightAll();
+    </script>
+  </body>
+</html>
