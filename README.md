@@ -1,12 +1,5 @@
-### About (2 lines)
 
-This repository contains a collection of JavaScript programs that cover fundamental concepts, algorithms, and coding challenges. Explore and learn from various coding examples to enhance your JavaScript skills!
-
----
-
-### README Template
-
-Here’s a simple README template that includes an overview, features, and examples of your JavaScript programs:
+### README
 
 ```markdown
 # JavaScript Programs
